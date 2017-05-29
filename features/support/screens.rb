@@ -4,8 +4,8 @@ class Screens
     @driver = driver
   end
   def screen_intro
-    @screen_intro_welcome ||= ScreenIntro.new @driver
-    @screen_intro_welcome
+    screen_intro ||= ScreenIntro.new @driver
+    screen_intro
   end
 
   def screen_create_filter
@@ -16,5 +16,10 @@ class Screens
   def screen_select_sub_category
     @screen_select_sub_category ||= ScreenSelectSubcategory.new @driver
     @screen_select_sub_category
+  end
+
+  def screen_enter_filter_data
+    screen_enter_filter_data ||= ScreenEnterFilterData.new @driver
+    screen_enter_filter_data
   end
 end

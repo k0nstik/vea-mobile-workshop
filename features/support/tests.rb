@@ -8,7 +8,7 @@ class Tests
     @test_intro
   end
 
-    def test_add_filter
+  def test_add_filter
     @test_add_filter ||= TestAddFilter.new(@screens)
     @test_add_filter
   end

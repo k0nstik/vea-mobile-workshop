@@ -34,3 +34,28 @@ Given /^I create property filter$/ do
     @tests.test_add_filter.close_intro
     @tests.test_add_filter.open_filter_parameter_screen
 end
+
+Given /^Launch application$/ do
+    @screens.screen_intro.visible?
+end
+
+When /^Navigate to create “Vakances” filter parameters page/ do
+    @screens.screen_intro.close_intro
+    @tests.test_add_filter.open_filter_parameter_screen
+end
+
+When /^Leave all parameter fields empty/ do
+    @screens.screen_enter_filter_data.visible?
+end
+
+When /^Press filter save button/ do
+  @screens.screen_enter_filter_data.filter_click_save
+end
+
+Then /^Parameter page visible/ do
+  @screens.screen_enter_filter_data.visible?
+end
+
+
+
+
