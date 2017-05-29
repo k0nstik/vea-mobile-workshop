@@ -4,7 +4,7 @@ class TestAddFilter
   def initialize(screens)
     @screens = screens
     @filter_data = Filter.new('property_positive')
-    @filter_save = Element.new(:id, 'save_filter', @driver)
+    # @filter_save = Element.new(:id, 'save_filter', @driver)
   end
 
   def close_intro
@@ -30,10 +30,6 @@ class TestAddFilter
     @filter_data.sub_categories.each do |sub_category|
       select_sub_category(sub_category)
     end
-
-    # def enter_filter_parameter_data
-    #   @filter_save.visible?
-    # end
 
   end
 end

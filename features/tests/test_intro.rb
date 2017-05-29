@@ -4,6 +4,12 @@ class TestIntro
     @screens = screens
   end
 
-  def intro_visible?
+  # def intro_visible
+  # end
+
+  def is_it_first_slideshow?
+    text = @screens.screen_first_slideshow
+    puts '2 ' + text
+    @screens.screen_intro.validate_first_slide_screen(text)
   end
 end

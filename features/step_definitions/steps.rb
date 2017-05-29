@@ -39,6 +39,10 @@ Given /^Launch application$/ do
     @screens.screen_intro.visible?
 end
 
+Then /^Validate first Slideshow screen/ do
+    @tests.test_intro.is_it_first_slideshow?
+end
+
 When /^Navigate to create “Vakances” filter parameters page/ do
     @screens.screen_intro.close_intro
     @tests.test_add_filter.open_filter_parameter_screen
@@ -46,14 +50,16 @@ end
 
 When /^Leave all parameter fields empty/ do
     @screens.screen_enter_filter_data.visible?
+    @screens.screen_enter_filter_data.filter_enter_data ''
 end
 
 When /^Press filter save button/ do
-  @screens.screen_enter_filter_data.filter_click_save
+    @screens.screen_enter_filter_data.filter_click_save
+    sleep(5)
 end
 
 Then /^Parameter page visible/ do
-  @screens.screen_enter_filter_data.visible?
+    @screens.screen_enter_filter_data.visible?
 end
 
 

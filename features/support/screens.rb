@@ -3,6 +3,10 @@ class Screens
   def initialize(driver)
     @driver = driver
   end
+  def screen_base
+    screen_base ||= ScreenBase.new @driver
+    screen_base
+  end
   def screen_intro
     screen_intro ||= ScreenIntro.new @driver
     screen_intro
@@ -22,4 +26,20 @@ class Screens
     screen_enter_filter_data ||= ScreenEnterFilterData.new @driver
     screen_enter_filter_data
   end
+
+  def screen_first_slideshow
+    screen_first_slideshow ||= 'Atlasi svarīgāko!'
+    puts '1 ' + screen_first_slideshow
+    screen_first_slideshow
+  end
+  #
+  # def screen_second_slideshow
+  #   screen_second_slideshow ||= ScreenEnterFilterData.new @driver
+  #   screen_second_slideshow
+  # end
+  #
+  # def screen_third_slideshow
+  #   screen_third_slideshow ||= ScreenEnterFilterData.new @driver
+  #   screen_third_slideshow
+  # end
 end
