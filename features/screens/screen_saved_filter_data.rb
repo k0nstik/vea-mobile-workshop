@@ -1,7 +1,7 @@
 class ScreenSavedFilterData
   def initialize(driver)
     @driver = driver
-    @visible_screen = Element.new(:xpath, '//android.widget.TextView[contains(@text, "Meklēšanas filtri")]', @driver)
+    @visible_screen = Element.new(:id, 'buy_filters', @driver)
   end
 
   def visible?

@@ -32,6 +32,16 @@ class Screens
     screen_saved_filter_data
   end
 
+  def screen_notifications
+    screen_notifications ||= ScreenNotifications.new @driver
+    screen_notifications
+  end
+
+  def screen_favorites
+    screen_favorites ||= ScreenFavorites.new @driver
+    screen_favorites
+  end
+
   def screen_first_slideshow
     screen_first_slideshow ||= 'Atlasi svarīgāko!'
     screen_first_slideshow

@@ -23,11 +23,10 @@
 
 
 Given /^Launch application$/ do
-  # if @screens.screen_intro.visible? == true
-  #   @tests.test_add_filter.close_intro
-  # end
-  @screens.screen_create_filter.visible?
-  # @support.adb.
+  if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
+    $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
+  end
+  @screens.screen_intro.visible?
 end
 
 Given /^I am on intro screen$/ do
@@ -43,7 +42,6 @@ Given /^I create property filter$/ do
 end
 
 Then /^Validate first Slideshow screen/ do
-  puts '1st screen'
   @tests.test_intro.is_it_first_slideshow?
 end
 
@@ -52,7 +50,6 @@ When /^Swipe to second Slideshow screen/ do
 end
 
 Then /^Validate second Slideshow screen/ do
-  puts '2nd screen'
   @tests.test_intro.is_it_second_slideshow?
 end
 
@@ -61,7 +58,6 @@ When /^Swipe to third Slideshow screen/ do
 end
 
 Then /^Validate third Slideshow screen/ do
-  puts '3nd screen'
   @tests.test_intro.is_it_third_slideshow?
 end
 
@@ -93,8 +89,43 @@ Then /^Validate Filter page/ do
   @screens.screen_saved_filter_data.visible?
 end
 
-Then /^Click “UZ APLIKĀCIJU” button/ do
-
+When /^Click “UZ APLIKĀCIJU” button/ do
+  @screens.screen_intro.close_intro
+  sleep(2)
 end
 
+Then /^Validate application landing screen/ do
+  @screens.screen_create_filter.visible?
+end
 
+When /^Click Side menu button/ do
+  @screens.screen_base.press_side_menu_button
+end
+
+Then /^Validate Side menu/ do
+  @screens.screen_base.menu_settings_visible?
+end
+
+When /^Click “Paziņojumi”/ do
+  @screens.screen_base.side_menu_element_click('Paziņojumi')
+end
+
+Then /^Validate Notifications page/ do
+  @screens.screen_notifications.empty_notifications_visible?
+end
+
+When /^Click “Favorīti”/ do
+  @screens.screen_base.side_menu_element_click('Favorīti')
+end
+
+Then /^Validate Favorites page/ do
+  @screens.screen_favorites.empty_favorites_visible?
+end
+
+When /^Click “Meklēšanas filtri”/ do
+  @screens.screen_base.side_menu_element_click('Meklēšanas filtri')
+end
+
+When /^Click “Izveidot filtru”/ do
+  @screens.screen_base.side_menu_element_click('Izveidot filtru')
+end
