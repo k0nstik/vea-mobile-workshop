@@ -7,10 +7,10 @@ Feature: 1. Filter feature
   Scenario: Validate Slideshow
     Given Launch application
     Then Validate first Slideshow screen
-#    When Swipe to second Slideshow screen
-#    Then Validate second Slideshow screen
-#    When Swipe to third Slideshow screen
-#    Then Validate third Slideshow screen
+    When Swipe to second Slideshow screen
+    Then Validate second Slideshow screen
+    When Swipe to third Slideshow screen
+    Then Validate third Slideshow screen
 
 #  Scenario: Create “Vakances” filter - negative
 #    Given Launch application

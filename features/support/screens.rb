@@ -29,17 +29,16 @@ class Screens
 
   def screen_first_slideshow
     screen_first_slideshow ||= 'Atlasi svarīgāko!'
-    puts '1 ' + screen_first_slideshow
     screen_first_slideshow
   end
-  #
-  # def screen_second_slideshow
-  #   screen_second_slideshow ||= ScreenEnterFilterData.new @driver
-  #   screen_second_slideshow
-  # end
-  #
-  # def screen_third_slideshow
-  #   screen_third_slideshow ||= ScreenEnterFilterData.new @driver
-  #   screen_third_slideshow
-  # end
+
+  def screen_second_slideshow
+    screen_second_slideshow ||= 'Veic vajadzīgās izmaiņas!'
+    screen_second_slideshow
+  end
+
+  def screen_third_slideshow
+    screen_third_slideshow ||= 'Saņem paziņojumus!'
+    screen_third_slideshow
+  end
 end

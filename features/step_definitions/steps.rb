@@ -23,43 +23,62 @@
 
 
 Given /^I am on intro screen$/ do
-    if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
-        $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
-    end
-    @screens.screen_intro.visible?
+  if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
+      $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
+  end
+  @screens.screen_intro.visible?
 end
 
 
 Given /^I create property filter$/ do
-    @tests.test_add_filter.close_intro
-    @tests.test_add_filter.open_filter_parameter_screen
+  @tests.test_add_filter.close_intro
+  @tests.test_add_filter.open_filter_parameter_screen
 end
 
 Given /^Launch application$/ do
-    @screens.screen_intro.visible?
+  @screens.screen_intro.visible?
 end
 
 Then /^Validate first Slideshow screen/ do
-    @tests.test_intro.is_it_first_slideshow?
+  puts '1st screen'
+  @tests.test_intro.is_it_first_slideshow?
+end
+
+When /^Swipe to second Slideshow screen/ do
+  @screens.screen_base.swipe_left
+end
+
+Then /^Validate second Slideshow screen/ do
+  puts '2nd screen'
+  @tests.test_intro.is_it_second_slideshow?
+end
+
+When /^Swipe to third Slideshow screen/ do
+  @screens.screen_base.swipe_left
+end
+
+Then /^Validate third Slideshow screen/ do
+  puts '3nd screen'
+  @tests.test_intro.is_it_third_slideshow?
 end
 
 When /^Navigate to create “Vakances” filter parameters page/ do
-    @screens.screen_intro.close_intro
-    @tests.test_add_filter.open_filter_parameter_screen
+  @screens.screen_intro.close_intro
+  @tests.test_add_filter.open_filter_parameter_screen
 end
 
 When /^Leave all parameter fields empty/ do
-    @screens.screen_enter_filter_data.visible?
-    @screens.screen_enter_filter_data.filter_enter_data ''
+  @screens.screen_enter_filter_data.visible?
+  @screens.screen_enter_filter_data.filter_enter_data ''
 end
 
 When /^Press filter save button/ do
-    @screens.screen_enter_filter_data.filter_click_save
-    sleep(5)
+  @screens.screen_enter_filter_data.filter_click_save
+  sleep(5)
 end
 
 Then /^Parameter page visible/ do
-    @screens.screen_enter_filter_data.visible?
+  @screens.screen_enter_filter_data.visible?
 end
 
 
