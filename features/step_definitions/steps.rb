@@ -62,7 +62,10 @@ Then /^Validate third Slideshow screen/ do
 end
 
 When /^Navigate to create “Vakances” filter parameters page/ do
-  @screens.screen_intro.close_intro
+  if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "Uz aplikāciju")]').size > 0
+    $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
+  end
+  # @screens.screen_intro.close_intro
   @tests.test_add_filter.open_filter_parameter_screen
 end
 
@@ -128,4 +131,12 @@ end
 
 When /^Click “Izveidot filtru”/ do
   @screens.screen_base.side_menu_element_click('Izveidot filtru')
+end
+
+When /^Open existing filter/ do
+  @tests.test_delete_filter.open_existing_filter
+end
+
+When /^Click Delete button/ do
+  @tests.test_delete_filter.delete_saved_filter
 end

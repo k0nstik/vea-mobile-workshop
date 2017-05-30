@@ -12,40 +12,44 @@ Feature: 1. Filter feature
 #    When Swipe to third Slideshow screen
 #    Then Validate third Slideshow screen
 
-  Scenario: Validate Side Menu page
-    Given Launch application
-    Then Validate first Slideshow screen
-    When Click “UZ APLIKĀCIJU” button
-    Then Validate application landing screen
-    When Click Side menu button
-    Then Validate Side menu
-    When Click “Paziņojumi”
-    Then Validate Notifications page
-    When Click Side menu button
-    Then Validate Side menu
-    When Click “Favorīti”
-    Then Validate Favorites page
-    When Click Side menu button
-    Then Validate Side menu
-    When Click “Meklēšanas filtri”
-    Then Validate Filter page
-    When Click Side menu button
-    Then Validate Side menu
-    When Click “Izveidot filtru”
-    Then Validate application landing screen
-
-#  Scenario: Delete existing filter from filter page
+#  Scenario: Validate Side Menu page
 #    Given Launch application
-#    Then Validate first slide show screen
+#    Then Validate first Slideshow screen
 #    When Click “UZ APLIKĀCIJU” button
 #    Then Validate application landing screen
 #    When Click Side menu button
 #    Then Validate Side menu
+#    When Click “Paziņojumi”
+#    Then Validate Notifications page
+#    When Click Side menu button
+#    Then Validate Side menu
+#    When Click “Favorīti”
+#    Then Validate Favorites page
+#    When Click Side menu button
+#    Then Validate Side menu
 #    When Click “Meklēšanas filtri”
 #    Then Validate Filter page
-#    When Open existing filter
-#    When Click Delete button
-#    Then Validate Filter page and check if filter is removed
+#    When Click Side menu button
+#    Then Validate Side menu
+#    When Click “Izveidot filtru”
+#    Then Validate application landing screen
+
+  Scenario: Delete existing filter from filter page
+    Given Launch application
+    Then Validate first Slideshow screen
+    When Click “UZ APLIKĀCIJU” button
+    Then Validate application landing screen
+    When Navigate to create “Vakances” filter parameters page
+    When Fill in filter Name and Price fields with valid data
+    Then Press filter save button
+    Then Validate Filter page
+    When Click Side menu button
+    Then Validate Side menu
+    When Click “Meklēšanas filtri”
+    Then Validate Filter page
+    When Open existing filter
+    When Click Delete button
+    Then Validate Filter page and check if filter is removed
 
 #  Scenario: Create “Vakances” filter - negative
 #    Given Launch application

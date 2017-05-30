@@ -12,4 +12,9 @@ class Tests
     @test_add_filter ||= TestAddFilter.new(@screens)
     @test_add_filter
   end
+
+  def test_delete_filter
+    test_delete_filter ||= TestDeleteFilter.new(@screens)
+    test_delete_filter
+  end
 end
