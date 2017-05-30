@@ -3,7 +3,7 @@ class TestAddFilter
   attr_accessor :driver
   def initialize(screens)
     @screens = screens
-    @filter_data = Filter.new('property_positive')
+    @filter_data = Filter.new('property_positive', 'filters_vakances')
     # @filter_save = Element.new(:id, 'save_filter', @driver)
   end
 
@@ -25,11 +25,20 @@ class TestAddFilter
     )
    end
 
-    def open_filter_parameter_screen
+  def open_filter_parameter_screen
     select_category
     @filter_data.sub_categories.each do |sub_category|
       select_sub_category(sub_category)
     end
+  end
 
+  def enter_data_to_filter_vakances
+    text = @screens.screen_enter_filter_data_not_empty
+    @screens.screen_enter_filter_data.filter_enter_data(text)
+  end
+
+  def enter_no_data_to_filter_vakances
+    text = @screens.screen_enter_filter_data_empty
+    @screens.screen_enter_filter_data.filter_enter_data(text)
   end
 end

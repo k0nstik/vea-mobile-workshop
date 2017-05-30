@@ -22,6 +22,14 @@
 # https://www.relishapp.com/rspec/rspec-expectations/docs
 
 
+Given /^Launch application$/ do
+  # if @screens.screen_intro.visible? == true
+  #   @tests.test_add_filter.close_intro
+  # end
+  @screens.screen_create_filter.visible?
+  # @support.adb.
+end
+
 Given /^I am on intro screen$/ do
   if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "OK")]').size > 0
       $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
@@ -29,14 +37,9 @@ Given /^I am on intro screen$/ do
   @screens.screen_intro.visible?
 end
 
-
 Given /^I create property filter$/ do
   @tests.test_add_filter.close_intro
   @tests.test_add_filter.open_filter_parameter_screen
-end
-
-Given /^Launch application$/ do
-  @screens.screen_intro.visible?
 end
 
 Then /^Validate first Slideshow screen/ do
@@ -69,18 +72,29 @@ end
 
 When /^Leave all parameter fields empty/ do
   @screens.screen_enter_filter_data.visible?
-  @screens.screen_enter_filter_data.filter_enter_data ''
+  @tests.test_add_filter.enter_no_data_to_filter_vakances
+end
+
+When /^Fill in filter Name and Price fields with valid data/ do
+  @screens.screen_enter_filter_data.visible?
+  @tests.test_add_filter.enter_data_to_filter_vakances
 end
 
 When /^Press filter save button/ do
   @screens.screen_enter_filter_data.filter_click_save
-  sleep(5)
+  sleep(3)
 end
 
 Then /^Parameter page visible/ do
   @screens.screen_enter_filter_data.visible?
 end
 
+Then /^Validate Filter page/ do
+  @screens.screen_saved_filter_data.visible?
+end
 
+Then /^Click “UZ APLIKĀCIJU” button/ do
+
+end
 
 

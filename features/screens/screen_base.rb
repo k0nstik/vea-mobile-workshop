@@ -8,6 +8,6 @@ class ScreenBase
   end
 
   def swipe_right
-    @driver.swipe(:start_x => 0.05, :delta_x => 0.95, duration:500)
+    @driver.swipe(:start_x => 0.05, :delta_x => 0.90, duration:500)
   end
 end

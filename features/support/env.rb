@@ -51,6 +51,7 @@ Before do
   @tests = Tests.new @screens
 end
 After do
+  `adb shell pm clear com.testdevlab.notifyus`
   $driver.driver_quit
 end
 

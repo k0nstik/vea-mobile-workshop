@@ -27,6 +27,11 @@ class Screens
     screen_enter_filter_data
   end
 
+  def screen_saved_filter_data
+    screen_saved_filter_data ||= ScreenSavedFilterData.new @driver
+    screen_saved_filter_data
+  end
+
   def screen_first_slideshow
     screen_first_slideshow ||= 'Atlasi svarīgāko!'
     screen_first_slideshow
@@ -40,5 +45,15 @@ class Screens
   def screen_third_slideshow
     screen_third_slideshow ||= 'Saņem paziņojumus!'
     screen_third_slideshow
+  end
+
+  def screen_enter_filter_data_not_empty
+    screen_enter_filter_data_not_empty ||= 'Smith'
+    screen_enter_filter_data_not_empty
+  end
+
+  def screen_enter_filter_data_empty
+    screen_enter_filter_data_empty ||= ''
+    screen_enter_filter_data_empty
   end
 end

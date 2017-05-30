@@ -5,30 +5,30 @@ Feature: 1. Filter feature
 #    When I create property filter
 
   Scenario: Validate Slideshow
-    Given Launch application
+    Given I am on intro screen
     Then Validate first Slideshow screen
     When Swipe to second Slideshow screen
     Then Validate second Slideshow screen
     When Swipe to third Slideshow screen
     Then Validate third Slideshow screen
 
-#  Scenario: Create “Vakances” filter - negative
-#    Given Launch application
-#    When Navigate to create “Vakances” filter parameters page
-#    When Leave all parameter fields empty
-#    Then Press filter save button
-#    Then Parameter page visible
+  Scenario: Create “Vakances” filter - negative
+    Given Launch application
+    When Navigate to create “Vakances” filter parameters page
+    When Leave all parameter fields empty
+    Then Press filter save button
+    Then Parameter page visible
 
-#  Scenario: Create “Vakances” filter - positive
-#    Given Launch application
-#    When Navigate to create “Vakances” filter parameters page
-#    Then Fill in filter Name (Nosaukums) and Price (Cena) fields with valid data
-#    When Press filter save button
-#    Then Validate Filter page
-#
-#  Scenario: Validate Side Menu page
-#    Given Launch application
-#    When Validate first slide show screen
+  Scenario: Create “Vakances” filter - positive
+    Given Launch application
+    When Navigate to create “Vakances” filter parameters page
+    When Fill in filter Name and Price fields with valid data
+    Then Press filter save button
+    Then Validate Filter page
+
+  Scenario: Validate Side Menu page
+    Given Launch application
+    Then Validate first Slideshow screen
 #    When Click “UZ APLIKĀCIJU” button
 #    Then Validate application landing screen
 #    When Click Side menu button

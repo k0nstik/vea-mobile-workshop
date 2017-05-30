@@ -2,8 +2,9 @@ require 'yaml'
 class Filter
   attr_accessor :name, :category, :sub_categories, :parameters
 
-  def initialize(type)
-    config = YAML.load_file('features/config/filters.yml')[type]
+  def initialize(type, filter)
+    config = YAML.load_file('features/config/'+filter+'.yml')[type]
+    # config = YAML.load_file('features/config/filters.yml')[type]
     @name = config['name']
     @category = config['category']
     @sub_categories = []
