@@ -63,4 +63,4 @@ Feature: 1. Filter feature
     Then Validate Filter page
     When Open existing filter
     When Click Delete button
-    Then Validate Filter page and check if filter is removed
+    Then Validate filter page and check if filter is removed

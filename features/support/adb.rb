@@ -24,8 +24,4 @@ class Adb
   def press_power(sn)
     `adb -s #{sn} shell input keyevent 26`
   end
-
-  def clear_app_data
-    `adb shell pm clear com.testdevlab.notifyus`
-  end
 end

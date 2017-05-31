@@ -4,7 +4,6 @@ class TestAddFilter
   def initialize(screens)
     @screens = screens
     @filter_data = Filter.new('property_positive', 'filters_vakances')
-    # @filter_save = Element.new(:id, 'save_filter', @driver)
   end
 
   def close_intro

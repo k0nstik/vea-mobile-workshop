@@ -2,7 +2,6 @@ class ScreenIntro
   def initialize(driver)
     @driver = driver
     @button_to_app = Element.new(:id, 'close_intro', @driver)
-    # @temp = Element.new(:id, 'main_row_background', @driver)
     @slideshow_screen_text = Element.new(:id, 'intro_text_header', @driver)
   end
 

@@ -65,7 +65,6 @@ When /^Navigate to create “Vakances” filter parameters page/ do
   if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "Uz aplikāciju")]').size > 0
     $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "Uz aplikāciju")]').click
   end
-  # @screens.screen_intro.close_intro
   @tests.test_add_filter.open_filter_parameter_screen
 end
 
@@ -92,9 +91,13 @@ Then /^Validate Filter page/ do
   @screens.screen_saved_filter_data.visible?
 end
 
+Then /^Validate filter page and check if filter is removed/ do
+  @screens.screen_saved_filter_data.visible?
+  @screens.screen_saved_filter_data.visible_empty_filter_screen?
+end
+
 When /^Click “UZ APLIKĀCIJU” button/ do
   @screens.screen_intro.close_intro
-  sleep(2)
 end
 
 Then /^Validate application landing screen/ do
