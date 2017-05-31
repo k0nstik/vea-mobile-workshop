@@ -63,7 +63,7 @@ end
 
 When /^Navigate to create “Vakances” filter parameters page/ do
   if $driver.find_elements(:xpath, '//android.widget.Button[contains(@text, "Uz aplikāciju")]').size > 0
-    $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "OK")]').click
+    $driver.find_element(:xpath, '//android.widget.Button[contains(@text, "Uz aplikāciju")]').click
   end
   # @screens.screen_intro.close_intro
   @tests.test_add_filter.open_filter_parameter_screen
